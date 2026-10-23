@@ -1,99 +1,77 @@
 export const socials = {
-  github: 'https://github.com/marianvakulenko',
-  linkedin: 'https://www.linkedin.com/in/marianvakulenko',
-  instagram: 'https://www.instagram.com/marchewwwka',
+  github: 'https://github.com/VakulenkoMarik',
+  linkedin: 'https://www.linkedin.com/in/marian-vakulenko-19b688362/',
+  instagram: 'https://www.instagram.com/_the_marik_',
   telegram: 'https://t.me/Marchewwwka',
-  email: 'hello@marianvakulenko.com',
+  email: 'vakulenkomarik@gmail.com',
 } as const
 
 export const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#portfolio', label: 'Portfolio' },
   { href: '#skills', label: 'Skills' },
-  { href: '#contacts', label: 'Contacts' },
+  { href: '#contact', label: 'Contact' },
 ] as const
 
-export type ProjectCategory = 'AI Video' | 'Game Trailer' | 'Commercial'
+// Оновлені категорії відповідно до твоїх робіт
+export type ProjectCategory = 'Dynamic' | 'Trailers' | 'Entertainment' | 'Motion Graphics' | 'Commercial'
 
 export type Project = {
   id: string
   title: string
   category: ProjectCategory
   description: string
-  poster: string
+  poster?: string
   video: string
-  duration: string
+  aspect: 'portrait' | 'landscape' // Додали поле для підтримки 9:16 та 16:9
   tools: string[]
 }
 
-const SAMPLE = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample'
-
 export const projects: Project[] = [
   {
-    id: 'lunar-drift',
-    title: 'Lunar Drift',
-    category: 'AI Video',
-    description:
-      'A surreal AI-generated short built from Flow sequences, cut to an original ElevenLabs voiceover.',
-    poster: '/projects/ai-dreamscape.png',
-    video: `${SAMPLE}/ElephantsDream.mp4`,
-    duration: '0:58',
-    tools: ['Flow', 'Gemini', 'ElevenLabs', 'DaVinci Resolve'],
-  },
-  {
-    id: 'neon-protocol',
-    title: 'Neon Protocol',
-    category: 'Game Trailer',
-    description:
-      'High-energy reveal trailer with beat-synced cuts, speed ramps and custom motion typography.',
-    poster: '/projects/game-trailer.png',
-    video: `${SAMPLE}/TearsOfSteel.mp4`,
-    duration: '1:24',
-    tools: ['DaVinci Resolve', 'Illustrator', 'Auphonic'],
-  },
-  {
-    id: 'weightless',
-    title: 'Weightless',
+    id: 'ldent-clinic',
+    title: "L'dent Clinic Promo",
     category: 'Commercial',
-    description:
-      'Product spot for a sneaker drop — slow-motion hero shots, sound design and vertical cutdowns.',
-    poster: '/projects/commercial-sneaker.png',
-    video: `${SAMPLE}/ForBiggerBlazes.mp4`,
-    duration: '0:30',
-    tools: ['DaVinci Resolve', 'CapCut', 'Photoshop'],
+    description: "Dynamic commercial spot for L'dent dental clinic, crafted with fast pacing and engagement hooks.",
+    video: 'https://lh3.googleusercontent.com/d/1rzKRsjaXUFBNEIIKVIdzaeXA-qvXeqyp',
+    aspect: 'portrait', // 9:16
+    tools: ['CapCut'],
   },
   {
-    id: 'dissolve',
-    title: 'Dissolve',
-    category: 'AI Video',
-    description:
-      'Experimental AI portrait piece exploring identity, graded for a cold, cinematic look.',
-    poster: '/projects/ai-portrait.png',
-    video: `${SAMPLE}/Sintel.mp4`,
-    duration: '1:12',
-    tools: ['Gemini', 'Flow', 'DaVinci Resolve'],
+    id: 'dental-technician',
+    title: 'Dental Technician Atmosphere',
+    category: 'Dynamic',
+    description: 'Immersive atmospheric edit capturing the meticulous work of a dental technician, synced to RushE music.',
+    video: 'https://lh3.googleusercontent.com/d/1Ih_5VMnttY8ox711dmxIDIFCiDj8tI-3',
+    aspect: 'landscape', // 16:9
+    tools: ['DaVinci Resolve'],
   },
   {
-    id: 'stoneborn',
-    title: 'Stoneborn',
-    category: 'Game Trailer',
-    description:
-      'Epic fantasy announcement trailer — scale-driven pacing, layered SFX and title animation.',
-    poster: '/projects/game-fantasy.png',
-    video: `${SAMPLE}/BigBuckBunny.mp4`,
-    duration: '2:05',
-    tools: ['DaVinci Resolve', 'ElevenLabs', 'Illustrator'],
+    id: 'game-trailer',
+    title: 'Custom Game Trailer',
+    category: 'Trailers',
+    description: 'Fully illustrated custom game trailer built from scratch with dedicated voiceover and cinematic pacing.',
+    video: 'https://lh3.googleusercontent.com/d/1cK15S1RExqAZJdGrbb5LxFb-R9ytgF8-',
+    aspect: 'landscape', // 16:9
+    tools: ['Photoshop', 'CapCut', 'ElevenLabs'],
   },
   {
-    id: 'morning-ritual',
-    title: 'Morning Ritual',
+    id: 'football-intro',
+    title: 'Football YouTube Intro',
+    category: 'Entertainment',
+    description: 'High-energy motion graphics intro created for a football YouTube channel.',
+    video: 'https://lh3.googleusercontent.com/d/1CofgqfxudvBXE58HieOhfjANS5lUO59h',
+    aspect: 'landscape', // 16:9
+    tools: ['CapCut', 'Photoshop', 'Illustrator'],
+  },
+  {
+    id: 'dynamic-ads',
+    title: 'Dynamic Subtitle Ads',
     category: 'Commercial',
-    description:
-      'Moody coffee brand edit designed for Reels & TikTok with hook-first storytelling.',
-    poster: '/projects/commercial-coffee.png',
-    video: `${SAMPLE}/ForBiggerEscapes.mp4`,
-    duration: '0:22',
-    tools: ['CapCut', 'Auphonic', 'Photoshop'],
+    description: 'Commercial short featuring engaging kinetic typography and fast retention editing.',
+    video: 'https://lh3.googleusercontent.com/d/1s0siMEKdzHohrnT9Q8f_ya0fOYKihIPn',
+    aspect: 'portrait', // 9:16
+    tools: ['CapCut'],
   },
 ]
 

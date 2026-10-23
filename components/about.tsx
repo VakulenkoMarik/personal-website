@@ -23,18 +23,16 @@ export function About() {
   return (
     <section id="about" className="scroll-mt-20 px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="mt-12 grid gap-6 lg:grid-cols-5">
-          <div className="lg:col-span-3">
-            <SectionHeading eyebrow="01 — About" title="An editor with a marketer’s mindset." />
-            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              My experience with agency work and forum projects has taught me to deliver content on
-              a same-day schedule without losing sight of the brief. I adapt to a wide range of
-              content, including medical and educational material, emotionally driven social media
-              videos, cinematic edits, event coverage, and conversational formats, tailoring the
-              tone and pacing to each subject and audience.
-            </p>
-          </div>
+        <SectionHeading eyebrow="01 — About" title="An editor with a marketer’s mindset." />
 
+        <div className="mt-12 grid gap-6 lg:grid-cols-5">
+          <p className="text-lg leading-relaxed text-muted-foreground lg:col-span-3">
+            My experience with agency work and forum projects has taught me to deliver content on a
+            same-day schedule without losing sight of the brief. I adapt to a wide range of content,
+            including medical and educational material, emotionally driven social media videos,
+            cinematic edits, event coverage, and conversational formats, tailoring the tone and
+            pacing to each subject and audience.
+          </p>
           <aside className="relative overflow-hidden rounded-xl border border-primary/30 bg-primary/5 p-6 lg:col-span-2">
             <div
               aria-hidden="true"

@@ -81,7 +81,7 @@ export function Hero() {
           </dl>
         </div>
 
-        <div className="relative hidden aspect-[9/16] w-full max-w-[35rem] overflow-hidden lg:block lg:justify-self-end">
+        <div className="relative hidden aspect-[9/16] w-full max-w-[32rem] overflow-hidden lg:block lg:justify-self-end">
           <Image
             src="/my-photo.webp"
             alt="Marian Vakulenko"

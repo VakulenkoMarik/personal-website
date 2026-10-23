@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { navLinks, socials } from '@/lib/site-data'
 import { GitHubIcon, LinkedInIcon } from '@/components/brand-icons'
@@ -13,15 +14,11 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <a
           href="#top"
-          className="flex items-center gap-2 font-heading text-lg font-bold tracking-tight"
+          className="group flex items-center gap-2 font-heading text-sm font-bold tracking-tight transition-opacity hover:opacity-80 sm:text-lg"
           aria-label="Marian Vakulenko — home"
         >
-          <span className="grid size-8 place-items-center rounded-md bg-primary text-sm font-black text-primary-foreground shadow-[0_0_20px_-2px_var(--color-primary)]">
-            MV
-          </span>
-          <span className="hidden sm:inline">
-            Marian<span className="text-primary">.</span>
-          </span>
+          <Image src="/logo.png" width={32} height={32} alt="Marian Vakulenko Logo" />
+          <span>Marian Vakulenko</span>
         </a>
 
         <nav aria-label="Main" className="hidden md:block">

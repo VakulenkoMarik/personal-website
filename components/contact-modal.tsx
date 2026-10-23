@@ -18,7 +18,7 @@ const contactOptions = [
   },
   {
     label: 'Email',
-    href: `mailto:${socials.email}`,
+    href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(socials.email)}`,
     icon: Mail,
   },
 ]

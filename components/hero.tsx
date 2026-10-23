@@ -81,14 +81,14 @@ export function Hero() {
           </dl>
         </div>
 
-        <div className="relative hidden h-[min(72vh,48rem)] min-h-[32rem] overflow-hidden lg:block">
+        <div className="relative hidden aspect-[9/16] w-full max-w-[35rem] overflow-hidden lg:block lg:justify-self-end">
           <Image
             src="/my-photo.webp"
             alt="Marian Vakulenko"
             fill
             priority
             sizes="(min-width: 1024px) 50vw, 0px"
-            className="origin-bottom scale-y-[1.7] object-contain object-bottom"
+            className="object-contain object-bottom"
           />
           <div
             aria-hidden="true"

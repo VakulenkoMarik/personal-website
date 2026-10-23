@@ -3,7 +3,7 @@ export const socials = {
   linkedin: 'https://www.linkedin.com/in/marian-vakulenko-19b688362/',
   instagram: 'https://www.instagram.com/_the_marik_',
   telegram: 'https://t.me/Marchewwwka',
-  email: 'vakulenkomarik@gmail.com',
+  email: 'vakulenkomaran100@gmail.com',
 } as const
 
 export const navLinks = [
@@ -13,7 +13,6 @@ export const navLinks = [
   { href: '#contact', label: 'Contact' },
 ] as const
 
-// Оновлені категорії відповідно до твоїх робіт
 export type ProjectCategory = 'Dynamic' | 'Trailers' | 'Entertainment' | 'Motion Graphics' | 'Commercial'
 
 export type Project = {
@@ -21,9 +20,8 @@ export type Project = {
   title: string
   category: ProjectCategory
   description: string
-  poster?: string
-  video: string
-  aspect: 'portrait' | 'landscape' // Додали поле для підтримки 9:16 та 16:9
+  youtubeId: string
+  aspect: 'portrait' | 'landscape'
   tools: string[]
 }
 
@@ -33,8 +31,17 @@ export const projects: Project[] = [
     title: "L'dent Clinic Promo",
     category: 'Commercial',
     description: "Dynamic commercial spot for L'dent dental clinic, crafted with fast pacing and engagement hooks.",
-    video: 'https://lh3.googleusercontent.com/d/1rzKRsjaXUFBNEIIKVIdzaeXA-qvXeqyp',
-    aspect: 'portrait', // 9:16
+    youtubeId: 'n2OqRZ8T1DY',
+    aspect: 'portrait',
+    tools: ['CapCut'],
+  },
+  {
+    id: 'dynamic-ads',
+    title: 'Dynamic Subtitle Ads',
+    category: 'Commercial',
+    description: 'Commercial short featuring engaging kinetic typography and fast retention editing.',
+    youtubeId: 'PD0moT1_M4U',
+    aspect: 'portrait',
     tools: ['CapCut'],
   },
   {
@@ -42,8 +49,8 @@ export const projects: Project[] = [
     title: 'Dental Technician Atmosphere',
     category: 'Dynamic',
     description: 'Immersive atmospheric edit capturing the meticulous work of a dental technician, synced to RushE music.',
-    video: 'https://lh3.googleusercontent.com/d/1Ih_5VMnttY8ox711dmxIDIFCiDj8tI-3',
-    aspect: 'landscape', // 16:9
+    youtubeId: 'gPt_7BAx3TU',
+    aspect: 'landscape',
     tools: ['DaVinci Resolve'],
   },
   {
@@ -51,8 +58,8 @@ export const projects: Project[] = [
     title: 'Custom Game Trailer',
     category: 'Trailers',
     description: 'Fully illustrated custom game trailer built from scratch with dedicated voiceover and cinematic pacing.',
-    video: 'https://lh3.googleusercontent.com/d/1cK15S1RExqAZJdGrbb5LxFb-R9ytgF8-',
-    aspect: 'landscape', // 16:9
+    youtubeId: 'kmSCX6Z2sC8',
+    aspect: 'landscape',
     tools: ['Photoshop', 'CapCut', 'ElevenLabs'],
   },
   {
@@ -60,18 +67,9 @@ export const projects: Project[] = [
     title: 'Football YouTube Intro',
     category: 'Entertainment',
     description: 'High-energy motion graphics intro created for a football YouTube channel.',
-    video: 'https://lh3.googleusercontent.com/d/1CofgqfxudvBXE58HieOhfjANS5lUO59h',
-    aspect: 'landscape', // 16:9
+    youtubeId: 'TC1y2xgdDzE',
+    aspect: 'landscape',
     tools: ['CapCut', 'Photoshop', 'Illustrator'],
-  },
-  {
-    id: 'dynamic-ads',
-    title: 'Dynamic Subtitle Ads',
-    category: 'Commercial',
-    description: 'Commercial short featuring engaging kinetic typography and fast retention editing.',
-    video: 'https://lh3.googleusercontent.com/d/1s0siMEKdzHohrnT9Q8f_ya0fOYKihIPn',
-    aspect: 'portrait', // 9:16
-    tools: ['CapCut'],
   },
 ]
 
@@ -98,8 +96,9 @@ export const skillGroups = [
   {
     title: 'Design',
     items: [
-      { name: 'Photoshop', note: 'Thumbnails & compositing' },
+      { name: 'Photoshop', note: 'Image editing' },
       { name: 'Illustrator', note: 'Vector assets for motion' },
+      { name: 'Canva', note: 'Thumbnails & compositing' },
     ],
   },
 ] as const

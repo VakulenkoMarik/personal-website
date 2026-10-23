@@ -1,108 +1,137 @@
 'use client'
 
 import { useState } from 'react'
-import { projects } from '@/lib/site-data'
+import { projects } from '@/lib/site-data' // або шлях до твого site-data файлу
+
+type FormatTab = 'portrait' | 'landscape'
+
+// Доступні категорії для кожного з форматів
+const categoriesByFormat: Record<FormatTab, string[]> = {
+  portrait: ['All', 'Commercial', 'Dynamic', 'Entertainment', 'Motion Graphics'],
+  landscape: ['All', 'Trailers', 'Entertainment', 'Motion Graphics'],
+}
 
 export function Portfolio() {
-  const [activeTab, setActiveTab] = useState<'all' | 'portrait' | 'landscape'>('all')
+  const [activeFormat, setActiveFormat] = useState<FormatTab>('portrait')
+  const [activeCategory, setActiveCategory] = useState<string>('All')
 
-  // Фільтрація проєктів залежно від обраної вкладки
+  const handleFormatChange = (format: FormatTab) => {
+    setActiveFormat(format)
+    setActiveCategory('All')
+  }
+
   const filteredProjects = projects.filter((project) => {
-    if (activeTab === 'portrait') return project.aspect === 'portrait'
-    if (activeTab === 'landscape') return project.aspect === 'landscape'
+    if (project.aspect !== activeFormat) return false
+    if (activeCategory !== 'All' && project.category !== activeCategory) return false
     return true
   })
 
   return (
-    <section id="portfolio" className="py-20 border-t border-zinc-800 bg-zinc-950">
-      <div className="max-w-6xl mx-auto px-4 space-y-12">
+    <section id="portfolio" className="py-20 border-t border-zinc-900 bg-zinc-950">
+      <div className="max-w-6xl mx-auto px-4 space-y-10">
         <div className="text-center space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Featured Work & Showreel</h2>
-          <p className="text-zinc-400 max-w-xl mx-auto">
-            A curated selection of high-retention vertical edits and cinematic horizontal trailers.
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+            Featured Work & Showreel
+          </h2>
+          <p className="text-zinc-400 max-w-xl mx-auto text-sm md:text-base">
+            Select a format below to explore high-retention vertical edits or cinematic trailers.
           </p>
 
-          {/* Вкладки перемикання форматів */}
-          <div className="flex justify-center gap-3 pt-4">
+          {/* 1-й рівень: Формати (9:16 та 16:9) */}
+          <div className="flex justify-center gap-3 pt-2">
             <button
-              onClick={() => setActiveTab('all')}
-              className={`px-5 py-2.5 rounded-xl font-medium transition text-sm ${
-                activeTab === 'all'
-                  ? 'bg-[#38BDF8] text-black font-bold'
-                  : 'bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white'
-              }`}
-            >
-              All Works
-            </button>
-            <button
-              onClick={() => setActiveTab('portrait')}
-              className={`px-5 py-2.5 rounded-xl font-medium transition text-sm ${
-                activeTab === 'portrait'
-                  ? 'bg-[#38BDF8] text-black font-bold'
-                  : 'bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white'
+              onClick={() => handleFormatChange('portrait')}
+              className={`px-5 py-2.5 rounded-xl font-semibold transition text-xs md:text-sm ${
+                activeFormat === 'portrait'
+                  ? 'bg-white text-zinc-950 shadow-lg'
+                  : 'bg-zinc-900/80 text-zinc-400 hover:text-white border border-zinc-800/60'
               }`}
             >
               Short-Form (9:16)
             </button>
             <button
-              onClick={() => setActiveTab('landscape')}
-              className={`px-5 py-2.5 rounded-xl font-medium transition text-sm ${
-                activeTab === 'landscape'
-                  ? 'bg-[#38BDF8] text-black font-bold'
-                  : 'bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white'
+              onClick={() => handleFormatChange('landscape')}
+              className={`px-5 py-2.5 rounded-xl font-semibold transition text-xs md:text-sm ${
+                activeFormat === 'landscape'
+                  ? 'bg-white text-zinc-950 shadow-lg'
+                  : 'bg-zinc-900/80 text-zinc-400 hover:text-white border border-zinc-800/60'
               }`}
             >
               Horizontal & Trailers (16:9)
             </button>
           </div>
+
+          {/* 2-й рівень: Підкатегорії */}
+          <div className="flex justify-center gap-1.5 flex-wrap pt-1">
+            {categoriesByFormat[activeFormat].map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+                  activeCategory === cat
+                    ? 'bg-zinc-800 text-white border border-zinc-700'
+                    : 'text-zinc-500 hover:text-zinc-300 bg-transparent'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Сітка проєктів */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
-            <div 
-              key={project.id} 
-              className="bg-zinc-900/50 border border-zinc-800 rounded-2xl overflow-hidden p-5 flex flex-col justify-between hover:border-zinc-700 transition"
-            >
-              {/* Відеоплеєр із суворим дотриманням пропорцій */}
-              <div className={`w-full bg-zinc-950 rounded-xl overflow-hidden relative mb-4 flex items-center justify-center ${
-                project.aspect === 'portrait' ? 'aspect-[9/16] max-w-[280px] mx-auto' : 'aspect-video'
-              }`}>
-                <video
-                  src={project.video}
-                  controls
-                  playsInline
-                  preload="metadata"
-                  className="w-full h-full object-contain bg-black"
-                />
-              </div>
-
-              {/* Інформація про проєкт */}
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold text-[#38BDF8] tracking-wide uppercase px-2.5 py-1 bg-[#38BDF8]/10 rounded-full">
-                    {project.category}
-                  </span>
-                  <span className="text-xs text-zinc-500 uppercase">
-                    {project.aspect === 'portrait' ? '9:16 Vertical' : '16:9 Cinematic'}
-                  </span>
+        {filteredProjects.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {filteredProjects.map((project) => (
+              <div 
+                key={project.id} 
+                className="bg-zinc-900/30 border border-zinc-900 rounded-2xl overflow-hidden p-4 md:p-5 flex flex-col justify-between hover:border-zinc-800 transition"
+              >
+                {/* Контейнер відеоплеєра */}
+                <div className={`w-full bg-zinc-950 rounded-xl overflow-hidden relative mb-4 flex items-center justify-center ${
+                  project.aspect === 'portrait' 
+                    ? 'aspect-[9/16] max-w-[240px] md:max-w-[260px] mx-auto max-h-[380px]' 
+                    : 'aspect-video'
+                }`}>
+                  <iframe
+                    src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                    title={project.title}
+                    className="w-full h-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
 
-                <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">{project.description}</p>
-
-                {/* Інструменти */}
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {project.tools.map((tool, i) => (
-                    <span key={i} className="text-xs bg-zinc-800 text-zinc-300 px-2.5 py-1 rounded-md">
-                      {tool}
+                {/* Інформація про проєкт */}
+                <div className="space-y-2.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-medium text-zinc-400 tracking-wide uppercase px-2 py-0.5 bg-zinc-900 rounded-md border border-zinc-800">
+                      {project.category}
                     </span>
-                  ))}
+                    <span className="text-[11px] text-zinc-600 uppercase">
+                      {project.aspect === 'portrait' ? '9:16' : '16:9'}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+                  <p className="text-xs md:text-sm text-zinc-400 leading-relaxed">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {project.tools.map((tool, i) => (
+                      <span key={i} className="text-[11px] bg-zinc-900/60 text-zinc-400 px-2 py-0.5 rounded border border-zinc-800/50">
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12 text-zinc-500 text-sm">
+            No projects found for this sub-category yet.
+          </div>
+        )}
       </div>
     </section>
   )

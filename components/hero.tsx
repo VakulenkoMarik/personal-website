@@ -2,7 +2,7 @@ import { ArrowRight, Play } from 'lucide-react'
 
 const stats = [
   { value: '2.5+', label: 'Years editing' },
-  { value: '150+', label: 'Videos delivered' },
+  { value: '500+', label: 'Videos delivered' },
   { value: 'SMM', label: 'Marketing roots' },
 ]
 
@@ -27,7 +27,7 @@ export function Hero() {
             <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary opacity-75" />
             <span className="relative inline-flex size-2 rounded-full bg-primary" />
           </span>
-          Available for freelance & studio work
+          Available for part-time & project work
         </p>
 
         <h1 className="max-w-4xl text-balance font-heading text-5xl font-bold leading-[1.02] tracking-tight md:text-7xl lg:text-8xl">
@@ -35,10 +35,11 @@ export function Hero() {
           — and belong on the big screen.
         </h1>
 
-        <p className="mt-8 max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground md:text-xl">
+        <p className="mt-8 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
           Marian Vakulenko — Social Media Video Editor & Motion Designer with{' '}
-          <span className="text-foreground">2.5+ years</span> of experience crafting AI videos,
-          game trailers and commercial edits. Now levelling up toward the film industry.
+          <span className="text-foreground">2.5+ years</span> of experience crafting entertainment,
+          educational content, AI videos, animations, trailers, and commercial edits. Now leveling
+          up toward the film industry.
         </p>
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">

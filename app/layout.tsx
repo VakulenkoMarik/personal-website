@@ -10,7 +10,7 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-jet
 export const metadata: Metadata = {
   title: 'Marian Vakulenko — Video Editor & Motion Designer',
   description:
-    'Portfolio of Marian Vakulenko, a social media video editor and motion designer with 2.5+ years of experience in AI videos, game trailers and commercial edits.',
+    'Portfolio of Marian Vakulenko, a social media video editor and motion designer with 2.5+ years of experience creating entertainment and educational content, AI videos, animations, trailers, and commercial edits.',
   generator: 'v0.app',
   icons: {
     icon: [

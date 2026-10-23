@@ -47,7 +47,7 @@ export const projects: Project[] = [
   {
     id: 'dental-technician',
     title: 'Dental Technician Atmosphere',
-    category: 'Dynamic',
+    category: 'Entertainment',
     description: 'Immersive atmospheric edit capturing the meticulous work of a dental technician, synced to RushE music.',
     youtubeId: 'gPt_7BAx3TU',
     aspect: 'landscape',

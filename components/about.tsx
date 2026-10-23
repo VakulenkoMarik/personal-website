@@ -28,13 +28,10 @@ export function About() {
         <div className="mt-12 grid gap-6 lg:grid-cols-5">
           <div className="space-y-5 text-lg leading-relaxed text-muted-foreground lg:col-span-3">
             <p>
-              For over <span className="text-foreground">2.5 years</span> I&apos;ve been editing
-              short-form and long-form video for brands, creators and game studios — from punchy
-              vertical ads to atmospheric AI-generated shorts and full-length trailers.
-            </p>
-            <p>
-              My goal is the film industry: I&apos;m constantly studying story structure, sound
-              design and grading so every social edit carries a little bit of cinema in it.
+              Agency work and forum projects have taught me to deliver in a same-day content rhythm
+              without losing sight of the brief. I adapt across medical and educational content,
+              emotionally driven social videos, cinematic edits, event coverage, and conversational
+              formats, tailoring tone and pacing to each subject and audience.
             </p>
           </div>
 

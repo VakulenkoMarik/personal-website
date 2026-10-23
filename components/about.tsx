@@ -35,7 +35,7 @@ export function About() {
             </p>
           </div>
 
-          <aside className="relative overflow-hidden rounded-xl border border-primary/30 bg-primary/5 p-6 lg:col-span-2">
+          <aside className="relative overflow-hidden rounded-xl border border-primary/30 bg-primary/5 p-6 lg:col-span-2 lg:-translate-y-3">
             <div
               aria-hidden="true"
               className="absolute -right-10 -top-10 size-40 rounded-full bg-primary/20 blur-3xl"

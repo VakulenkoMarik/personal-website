@@ -1,4 +1,8 @@
+'use client'
+
+import { useState } from 'react'
 import { ArrowRight, Play } from 'lucide-react'
+import { ContactModal } from '@/components/contact-modal'
 
 const stats = [
   { value: '2.5+', label: 'Years editing' },
@@ -7,6 +11,8 @@ const stats = [
 ]
 
 export function Hero() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+
   return (
     <section
       id="top"
@@ -43,13 +49,14 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-          <a
-            href="#contacts"
+          <button
+            type="button"
+            onClick={() => setIsContactModalOpen(true)}
             className="group inline-flex h-12 items-center justify-center gap-2 rounded-md bg-primary px-6 font-medium text-primary-foreground shadow-[0_0_32px_-6px_var(--color-primary)] transition-all hover:shadow-[0_0_44px_-4px_var(--color-primary)]"
           >
             Contact Me
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          </button>
           <a
             href="#portfolio"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-border bg-card px-6 font-medium text-foreground transition-colors hover:border-primary/60 hover:text-primary"
@@ -58,6 +65,11 @@ export function Hero() {
             View Work
           </a>
         </div>
+
+        <ContactModal
+          isOpen={isContactModalOpen}
+          onClose={() => setIsContactModalOpen(false)}
+        />
 
         <dl className="mt-16 grid max-w-xl grid-cols-3 gap-6 border-t border-border pt-8">
           {stats.map((stat) => (

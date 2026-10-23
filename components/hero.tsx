@@ -88,7 +88,7 @@ export function Hero() {
             fill
             priority
             sizes="(min-width: 1024px) 50vw, 0px"
-            className="object-contain object-bottom"
+            className="origin-bottom scale-y-[1.7] object-contain object-bottom"
           />
           <div
             aria-hidden="true"

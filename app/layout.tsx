@@ -13,11 +13,7 @@ export const metadata: Metadata = {
     'Portfolio of Marian Vakulenko, a social media video editor and motion designer with 2.5+ years of experience creating entertainment and educational content, AI videos, animations, trailers, and commercial edits.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      { url: '/icon-light-32x32.png', media: '(prefers-color-scheme: light)' },
-      { url: '/icon-dark-32x32.png', media: '(prefers-color-scheme: dark)' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
+    icon: '/iconG9.svg',
     apple: '/apple-icon.png',
   },
 }

@@ -28,7 +28,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]"
       />
 
-      <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:gap-6">
+      <div className="mx-auto grid max-w-[90rem] items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-6">
         <div className="relative z-10">
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-primary">
             <span className="relative flex size-2">
@@ -81,7 +81,7 @@ export function Hero() {
           </dl>
         </div>
 
-        <div className="relative hidden aspect-[9/16] w-full max-w-[32rem] overflow-hidden lg:block lg:justify-self-end">
+        <div className="relative hidden aspect-[9/16] w-full max-w-[48rem] overflow-hidden lg:block lg:justify-self-end">
           <Image
             src="/my-photo.webp"
             alt="Marian Vakulenko"

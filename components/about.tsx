@@ -23,19 +23,19 @@ export function About() {
   return (
     <section id="about" className="scroll-mt-20 px-5 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading eyebrow="01 — About" title="Editor with a marketer's brain." />
-
         <div className="mt-12 grid gap-6 lg:grid-cols-5">
-          <div className="space-y-5 text-lg leading-relaxed text-muted-foreground lg:col-span-3">
-            <p>
-              Agency work and forum projects have taught me to deliver in a same-day content rhythm
-              without losing sight of the brief. I adapt across medical and educational content,
-              emotionally driven social videos, cinematic edits, event coverage, and conversational
-              formats, tailoring tone and pacing to each subject and audience.
+          <div className="lg:col-span-3">
+            <SectionHeading eyebrow="01 — About" title="An editor with a marketer’s mindset." />
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              My experience with agency work and forum projects has taught me to deliver content on
+              a same-day schedule without losing sight of the brief. I adapt to a wide range of
+              content, including medical and educational material, emotionally driven social media
+              videos, cinematic edits, event coverage, and conversational formats, tailoring the
+              tone and pacing to each subject and audience.
             </p>
           </div>
 
-          <aside className="relative overflow-hidden rounded-xl border border-primary/30 bg-primary/5 p-6 lg:col-span-2 lg:-translate-y-3">
+          <aside className="relative overflow-hidden rounded-xl border border-primary/30 bg-primary/5 p-6 lg:col-span-2">
             <div
               aria-hidden="true"
               className="absolute -right-10 -top-10 size-40 rounded-full bg-primary/20 blur-3xl"

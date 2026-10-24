@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { projects } from '@/lib/site-data' // або шлях до твого site-data файлу
+import { Play } from 'lucide-react'
+import { projects, type Project } from '@/lib/site-data'
 
 type FormatTab = 'portrait' | 'landscape'
 
@@ -9,6 +10,43 @@ type FormatTab = 'portrait' | 'landscape'
 const categoriesByFormat: Record<FormatTab, string[]> = {
   portrait: ['All', 'Commercial', 'Dynamic', 'Entertainment', 'Motion Graphics'],
   landscape: ['All', 'Trailers', 'Entertainment', 'Motion Graphics'],
+}
+
+function YouTubeFacade({ project }: { project: Project }) {
+  const [playing, setPlaying] = useState(false)
+
+  if (playing) {
+    return (
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}?autoplay=1`}
+        title={project.title}
+        className="absolute inset-0 size-full border-0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    )
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setPlaying(true)}
+      aria-label={`Play ${project.title}`}
+      className="group absolute inset-0 size-full cursor-pointer"
+    >
+      <img
+        src={`https://i.ytimg.com/vi/${project.youtubeId}/hqdefault.jpg`}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        className="size-full object-cover"
+      />
+      <span className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/35" />
+      <span className="absolute left-1/2 top-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-black/70 text-white transition-transform group-hover:scale-110">
+        <Play className="ml-0.5 size-6 fill-current" aria-hidden="true" />
+      </span>
+    </button>
+  )
 }
 
 export function Portfolio() {
@@ -93,14 +131,7 @@ export function Portfolio() {
                     ? 'aspect-[9/16] max-w-[240px] md:max-w-[260px] mx-auto max-h-[380px]' 
                     : 'aspect-video'
                 }`}>
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}`}
-                    title={project.title}
-                    className="w-full h-full border-0"
-                    loading="lazy"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                  <YouTubeFacade project={project} />
                 </div>
 
                 {/* Інформація про проєкт */}

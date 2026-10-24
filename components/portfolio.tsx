@@ -94,9 +94,10 @@ export function Portfolio() {
                     : 'aspect-video'
                 }`}>
                   <iframe
-                    src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                    src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}`}
                     title={project.title}
                     className="w-full h-full border-0"
+                    loading="lazy"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   />

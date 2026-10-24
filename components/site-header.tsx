@@ -14,10 +14,16 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <a
           href="#top"
-          className="group flex items-center gap-2 font-heading text-sm font-bold tracking-tight transition-opacity hover:opacity-80 sm:text-lg"
+          className="group flex shrink-0 items-center gap-2 whitespace-nowrap font-heading text-sm font-bold tracking-tight transition-opacity hover:opacity-80 sm:text-lg"
           aria-label="Marian Vakulenko — home"
         >
-          <Image src="/logo.png" width={32} height={32} alt="Marian Vakulenko Logo" />
+          <Image
+            src="/logo.webp"
+            alt="Marian Vakulenko Logo"
+            className="h-8 w-8 shrink-0 object-contain"
+            height={32}
+            width={32}
+          />
           <span>Marian Vakulenko</span>
         </a>
 

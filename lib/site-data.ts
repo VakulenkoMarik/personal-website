@@ -29,13 +29,40 @@ export const projects: Project[] = [
   {
     id: 'ldent-clinic',
     title: "L'dent Clinic Promo",
-    category: 'Commercial',
+    category: 'Dynamic',
     description: "Dynamic commercial spot for L'dent dental clinic, crafted with fast pacing and engagement hooks.",
     youtubeId: 'n2OqRZ8T1DY',
     aspect: 'portrait',
     tools: ['CapCut'],
   },
   {
+    id: 'before-after-ui',
+    title: "UI Redesign & Before/After Showcase",
+    category: 'Motion Graphics',
+    description: "Dynamic interface comparison showcasing fluid motion graphics and precise visual structuring.",
+    youtubeId: 'f7Dezpf3xAc',
+    aspect: 'portrait',
+    tools: ['DaVinci Resolve'],
+  },
+  {
+    id: 'forum-interviews',
+    title: "Event Feedback & Participant Interviews",
+    category: 'Entertainment',
+    description: "Engaging interview cut focused on natural pacing, atmospheric framing, and clean retention-driven styling.",
+    youtubeId: 'U_EpMeWyQBU',
+    aspect: 'portrait',
+    tools: ['CapCut', 'Canva'],
+  },
+  {
+    id: 'satirical-comedy',
+    title: "Satirical Comedy & Entertainment Short",
+    category: 'Entertainment',
+    description: "Humorous entertainment short engineered with tight comedic timing, and engaging audio-visual effects designed for viral retention.",
+    youtubeId: 'g69f7Orb2LA',
+    aspect: 'portrait',
+    tools: ['CapCut'],
+  },
+  /*{
     id: 'dynamic-ads',
     title: 'Dynamic Subtitle Ads',
     category: 'Commercial',
@@ -43,7 +70,7 @@ export const projects: Project[] = [
     youtubeId: 'PD0moT1_M4U',
     aspect: 'portrait',
     tools: ['CapCut'],
-  },
+  },*/
   {
     id: 'dental-technician',
     title: 'Dental Technician Atmosphere',
@@ -70,6 +97,15 @@ export const projects: Project[] = [
     youtubeId: 'TC1y2xgdDzE',
     aspect: 'landscape',
     tools: ['CapCut', 'Photoshop', 'Illustrator'],
+  },
+  {
+    id: 'forum-closing',
+    title: 'Forum Closing / Main Screen Trailer',
+    category: 'Entertainment',
+    description: 'High-impact summary trailer engineered for large-screen playback, capturing the core highlights and energy of the event.',
+    youtubeId: 'NRI0Z44SpiI',
+    aspect: 'landscape',
+    tools: ['CapCut'],
   },
 ]
 

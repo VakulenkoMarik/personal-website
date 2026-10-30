@@ -36,6 +36,15 @@ export const projects: Project[] = [
     tools: ['CapCut'],
   },
   {
+    id: 'helloween',
+    title: "Cinematic Short-Form Halloween Edit",
+    category: 'Entertainment',
+    description: "A cinematic short capturing the unique Halloween atmosphere. Built with immersive color grading and thematic sound to deliver a memorable visual experience",
+    youtubeId: 'muMKKtuDlKs]',
+    aspect: 'portrait',
+    tools: ['CapCut'],
+  },
+  {
     id: 'before-after-ui',
     title: "UI Redesign & Before/After Showcase",
     category: 'Motion Graphics',
@@ -72,9 +81,18 @@ export const projects: Project[] = [
     tools: ['CapCut'],
   },*/
   {
+    id: 'event-atmosphere',
+    title: 'Retro Vibe Event Recap',
+    category: 'Dynamic',
+    description: 'A dynamic event recap styled with a retro aesthetic. Edited in vintage color tones and rhythm-synced cuts that capture the full energy and authentic vibe of the event.',
+    youtubeId: 'Nyup2_ZLq6o',
+    aspect: 'landscape',
+    tools: ['CapCut'],
+  },
+  {
     id: 'dental-technician',
     title: 'Dental Technician Atmosphere',
-    category: 'Entertainment',
+    category: 'Dynamic',
     description: 'Immersive atmospheric edit capturing the meticulous work of a dental technician, synced to RushE music.',
     youtubeId: 'gPt_7BAx3TU',
     aspect: 'landscape',

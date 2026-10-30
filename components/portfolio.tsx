@@ -9,7 +9,7 @@ type FormatTab = 'portrait' | 'landscape'
 // Доступні категорії для кожного з форматів
 const categoriesByFormat: Record<FormatTab, string[]> = {
   portrait: ['All', 'Commercial', 'Dynamic', 'Entertainment', 'Motion Graphics'],
-  landscape: ['All', 'Trailers', 'Entertainment', 'Motion Graphics'],
+  landscape: ['All', 'Dynamic', 'Trailers', 'Entertainment', 'Motion Graphics'],
 }
 
 function YouTubeFacade({ project }: { project: Project }) {

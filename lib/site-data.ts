@@ -40,7 +40,7 @@ export const projects: Project[] = [
     title: "Cinematic Short-Form Halloween Edit",
     category: 'Entertainment',
     description: "A cinematic short capturing the unique Halloween atmosphere. Built with immersive color grading and thematic sound to deliver a memorable visual experience",
-    youtubeId: 'muMKKtuDlKs]',
+    youtubeId: 'muMKKtuDlKs',
     aspect: 'portrait',
     tools: ['CapCut'],
   },
